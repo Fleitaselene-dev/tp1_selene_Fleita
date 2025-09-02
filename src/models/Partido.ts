@@ -1,4 +1,4 @@
-
+import { generarID } from "../utils/GeneradorID";
 import { Equipo } from "./Equipo";
 import type { Deporte } from "./Deporte";
 export class Partido{
@@ -7,13 +7,14 @@ export class Partido{
     visitante : Equipo;
     deporte:Deporte;
     resultado? : string
-    constructor(local: Equipo, visitante:Equipo, id:number, deporte:Deporte, resultado?:string){
+    constructor(local: Equipo, visitante:Equipo, deporte:Deporte, resultado?:string){
         this.local=local;
         this.visitante=visitante;
-        this.id=id;
+        this.id=generarID();
         this.deporte=deporte;
         this.resultado=resultado
-        if(local === visitante){
+        //Validamos por nombre que los equipos no sean los mismos
+        if(local.nombre === visitante.nombre){
    throw new Error("El equipo local no puede ser el mismo que el visitante");
 }
 
@@ -32,3 +33,4 @@ export class Partido{
     }
 
 }
+

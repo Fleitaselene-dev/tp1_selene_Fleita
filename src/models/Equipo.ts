@@ -26,3 +26,4 @@ export class Equipo implements ICompetidor {
         return this.jugadores.length;
     }
 }
+
