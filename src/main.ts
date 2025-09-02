@@ -14,16 +14,19 @@ function crearJugadores(cantidad: number, deporte: 'fútbol' | 'Basquet'): Jugad
 }
 
 //  CREAR EQUIPOS 
-const equipoFutbol = new Equipo('Los Rápidos', crearJugadores());
-const equipoBasquet = new Equipo('Saltadores', crearJugadores);
+// CREAR EQUIPOS
+const equipoFutbol = new Equipo('Ferrari', crearJugadores(11, "fútbol"));
+const equipoBasquet = new Equipo('Red Bull', crearJugadores(5, "Basquet"));
+
 
 //  CREAR DEPORTES
 const futbol = new Futbol();
 const basquet = new Basquet();
 
 // VALIDAR EQUIPOS
-console.log('Fútbol válido:', futbol.validar(equipoFutbol.listarIntegrantes()));
-console.log('Básquet válido:', basquet.validar(equipoBasquet.listarIntegrantes()));
+console.log('Fútbol válido:', futbol.validar(equipoFutbol));
+console.log('Básquet válido:', basquet.validar(equipoBasquet));
+
 
 // MOSTRAR JUGADORES 
 console.log('Equipo de Fútbol:', equipoFutbol.listarIntegrantes());
